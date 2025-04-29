@@ -172,6 +172,7 @@ body {
     font-size: 2.5rem;
     color: var(--secondary-color);
     margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
 .hero h2 {
@@ -367,6 +368,12 @@ body {
     .hero-content {
         padding-right: 0;
         margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        line-height: 1.1;
+        margin-bottom: 0.8rem;
     }
     
     .steps-container {

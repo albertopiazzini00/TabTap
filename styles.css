@@ -577,6 +577,25 @@ body {
     border-color: var(--primary-color);
 }
 
+.contact-form .cta-button {
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 3rem 1rem;
+    }
+
+    .contact-form-container {
+        padding: 1.5rem;
+    }
+
+    .contact-form .cta-button {
+        display: inline-block;
+        margin-top: 1rem;
+    }
+}
+
 /* Sezione FAQ */
 .faq-section {
     padding: 5rem 2rem;

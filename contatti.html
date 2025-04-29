@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - TabTab</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="TabTab Logo">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="chi-siamo.html">Chi siamo</a>
+                <a href="settori.html">Settori</a>
+                <a href="piani.html">Piani</a>
+                <a href="contatti.html">Contatti</a>
+            </div>
+            <button class="cta-button">Richiedi una demo</button>
+            <button class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="mobile-menu">
+                <a href="chi-siamo.html">Chi siamo</a>
+                <a href="settori.html">Settori</a>
+                <a href="piani.html">Piani</a>
+                <a href="contatti.html">Contatti</a>
+                <button class="cta-button">Richiedi una demo</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <section class="contact-section">
+            <h1>Contattaci</h1>
+            <p class="contact-intro">Siamo qui per aiutarti. Compila il form o contattaci direttamente.</p>
+            
+            <div class="contact-container">
+                <div class="contact-form-container">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nome e Cognome</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefono</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Messaggio</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Invia messaggio</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Indirizzo</h3>
+                        <p>Via Roma 123, 00100 Roma (RM)</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <h3>Telefono</h3>
+                        <p>+39 123 456 7890</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>info@tabtab.it</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <h3>Orari di apertura</h3>
+                        <p>Lunedì - Venerdì: 9:00 - 18:00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <h2>Dove ci troviamo</h2>
+            <div class="map-container">
+                <!-- Inserisci qui il codice della mappa -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.7148199999997!2d12.4922309!3d41.9027835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f61b6532013ad%3A0x28f1c82e908503c4!2sColosseo!5e0!3m2!1sit!2sit!4v1645541234567!5m2!1sit!2sit" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contatti</h4>
+                <p>Email: info@tabtab.it</p>
+                <p>Telefono: +39 123 456 7890</p>
+            </div>
+            <div class="footer-section">
+                <h4>Link Utili</h4>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#termini">Termini di Servizio</a>
+            </div>
+            <div class="footer-section">
+                <h4>Social</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TabTab. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

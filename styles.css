@@ -4,6 +4,9 @@
     --text-color: #444444;
     --light-gray: #f5f5f5;
     --white: #ffffff;
+    --cta-primary: #FF3B30; /* Rosso più vivace */
+    --cta-hover: #FF1A1A; /* Rosso più scuro per hover */
+    --cta-text: #FFFFFF; /* Testo bianco per contrasto */
 }
 
 * {
@@ -77,21 +80,21 @@ body {
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
-    height: 21px;
+    width: 24px;
+    height: 18px;
     background: transparent;
     border: none;
     cursor: pointer;
     padding: 0;
     z-index: 10;
-    margin-left: auto;
 }
 
 .hamburger-menu span {
+    display: block;
     width: 100%;
-    height: 3px;
+    height: 2px;
     background-color: #333;
-    border-radius: 3px;
+    border-radius: 2px;
     transition: all 0.3s ease;
 }
 
@@ -138,18 +141,21 @@ body {
 }
 
 .cta-button {
-    background-color: var(--primary-color);
-    color: var(--white);
+    background-color: var(--cta-primary);
+    color: var(--cta-text);
     border: none;
     padding: 0.8rem 1.5rem;
-    border-radius: 25px;
+    border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(255, 59, 48, 0.2);
 }
 
 .cta-button:hover {
-    background-color: #cc0000;
+    background-color: var(--cta-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(255, 26, 26, 0.3);
 }
 
 /* Hero Section */
@@ -339,12 +345,41 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .nav-container {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+    }
+
     .nav-links {
         display: none;
     }
     
+    .logo {
+        margin-right: auto;
+    }
+
     .hamburger-menu {
         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 18px;
+        padding: 0;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        background: transparent;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .hamburger-menu span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        margin: 2px auto;
+        background-color: #333;
+        border-radius: 2px;
     }
     
     .mobile-menu {
@@ -356,37 +391,60 @@ body {
     }
     
     .cta-button {
-        display: none;
+        display: block;
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        margin-left: 0;
     }
-    
+
+    .nav-actions {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .nav-actions .cta-button {
+        order: 2;
+        margin-left: 8px;
+        margin-right: 0;
+    }
+    .nav-actions .hamburger-menu {
+        order: 1;
+        margin-right: 15px;
+    }
+
     .hero {
+        display: flex;
         flex-direction: column;
+        align-items: center;
         text-align: center;
-        padding: 6rem 1rem;
     }
-    
     .hero-content {
-        padding-right: 0;
-        margin-bottom: 2rem;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-        line-height: 1.1;
-        margin-bottom: 0.8rem;
-    }
-    
-    .steps-container {
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
     }
-    
-    .step {
-        margin-bottom: 2rem;
+    .hero-image {
+        order: 2;
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
-
-    .nav-container {
-        justify-content: space-between;
-        padding: 1rem;
+    .hero-content .cta-button {
+        order: 3;
+        align-self: center;
+        width: 140px;
+        min-width: 100px;
+        max-width: 200px;
+        margin: 1.2rem auto 0 auto;
+        display: block;
+    }
+    .hero-content h1,
+    .hero-content h2,
+    .hero-content p {
+        order: unset;
     }
 }
 

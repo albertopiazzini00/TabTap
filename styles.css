@@ -202,6 +202,147 @@ body {
     height: auto;
 }
 
+/* Cos'è TabTap */
+.what-is-tabtap {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.what-is-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.what-is-header {
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.what-is-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.what-is-tabtap h2 {
+    font-size: 2.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.what-is-tabtap .subtitle {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.what-is-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.feature-item {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--cta-hover));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.feature-item:hover::before {
+    opacity: 1;
+}
+
+.feature-item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover i {
+    transform: scale(1.1);
+}
+
+.feature-item .description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin: 0;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width: 768px) {
+    .what-is-tabtap {
+        padding: 4rem 1rem;
+    }
+
+    .what-is-tabtap h2 {
+        font-size: 2.2rem;
+    }
+
+    .what-is-tabtap .subtitle {
+        font-size: 1.3rem;
+    }
+
+    .what-is-features {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .feature-item {
+        padding: 1.5rem;
+    }
+
+    .feature-item i {
+        font-size: 2rem;
+    }
+
+    .feature-item .description {
+        font-size: 1rem;
+    }
+}
+
 /* Come Funziona */
 .how-it-works {
     padding: 5rem 2rem;
@@ -463,11 +604,22 @@ body {
         text-align: center;
     }
     .hero-content {
+        width: auto;
+        align-items: center;
         display: flex;
         flex-direction: column;
-        align-items: center;
         text-align: center;
-        width: 100%;
+        padding: 0;
+    }
+    .hero-content h1,
+    .hero-content h2,
+    .hero-content p,
+    .hero-content .cta-button {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+        max-width: 100%;
     }
     .hero-image {
         order: 2;
@@ -483,14 +635,6 @@ body {
         max-width: 200px;
         margin: 1.2rem auto 0 auto;
         display: block;
-    }
-    .hero-content h1,
-    .hero-content h2,
-    .hero-content p {
-        order: unset;
-    }
-    .hero-content h1 {
-        font-size: 2.2rem;
     }
 }
 
@@ -574,42 +718,78 @@ body {
 }
 
 .pricing-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
     margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
 .pricing-card {
-    background-color: var(--white);
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    padding: 1.2rem 1.1rem 1.1rem 1.1rem;
+    min-width: 120px;
+    max-width: 180px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.2s, transform 0.2s;
 }
 
-.pricing-card:hover {
-    transform: translateY(-5px);
+.pricing-card .pricing-header {
+    margin-bottom: 0.7rem;
+}
+
+.pricing-card h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+}
+
+.pricing-card .price {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin: 0.2rem 0 0.2rem 0;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pricing-card .period {
+    font-size: 1rem;
+    color: #888;
+    font-weight: 400;
+    margin-top: 0.1rem;
+}
+
+.pricing-card .save-badge {
+    background: #ffeaea;
+    color: var(--primary-color);
+    font-size: 0.98rem;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 0.18rem 0.6rem;
+    margin-top: 0.5rem;
+    vertical-align: middle;
+    display: inline-block;
 }
 
 .pricing-card.featured {
     border: 2px solid var(--primary-color);
-    transform: scale(1.05);
+    box-shadow: 0 4px 18px rgba(255,59,48,0.08);
 }
 
-.pricing-header {
-    margin-bottom: 2rem;
-}
-
-.price {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin: 1rem 0;
-}
-
-.price .period {
-    font-size: 1rem;
-    color: var(--text-color);
+.pricing-card:hover {
+    box-shadow: 0 8px 24px rgba(255,59,48,0.13);
+    transform: translateY(-4px) scale(1.03);
 }
 
 .features {
@@ -989,5 +1169,475 @@ html {
     
     .testimonials-container {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Tutto in un tap - How it works v2 */
+.how-it-works-v2 {
+    padding: 6rem 2rem;
+    background: var(--white);
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+}
+
+.howit-header {
+    text-align: left;
+    margin-bottom: 3.5rem;
+}
+
+.howit-header h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+}
+
+.howit-underline {
+    display: flex;
+    align-items: center;
+    height: 8px;
+    margin-bottom: 1.5rem;
+}
+.howit-underline-red {
+    width: 180px;
+    height: 6px;
+    background: var(--primary-color);
+    border-radius: 4px 0 0 4px;
+}
+.howit-underline-gray {
+    flex: 1;
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 0 4px 4px 0;
+}
+
+.howit-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.howit-step {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 2.5rem 0;
+    gap: 2.5rem;
+}
+
+.howit-step:nth-child(even) .howit-img {
+    order: 2;
+}
+
+.howit-text {
+    flex: 2;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.howit-step h3 {
+    font-size: 1.35rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 0.7rem;
+}
+
+.howit-step p {
+    font-size: 1.08rem;
+    color: var(--text-color);
+    margin-bottom: 0.2rem;
+}
+
+.howit-note {
+    font-size: 0.95rem;
+    color: #888;
+    margin-top: 0.2rem;
+    font-style: italic;
+}
+
+.howit-img {
+    flex: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+}
+
+.howit-img img {
+    max-width: 220px;
+    width: 100%;
+    border-radius: 2.2rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    background: #fff;
+}
+
+.howit-separator {
+    height: 1px;
+    background: #e0e0e0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .how-it-works-v2 {
+        padding: 3.5rem 0.5rem;
+    }
+    .howit-header {
+        text-align: center;
+    }
+    .howit-steps {
+        gap: 0;
+    }
+    .howit-step {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem 0;
+    }
+    .howit-text {
+        text-align: center;
+        align-items: center;
+    }
+    .howit-img {
+        margin-top: 1.2rem;
+    }
+    .howit-img img {
+        max-width: 260px;
+    }
+}
+
+@media (max-width: 600px) {
+    .how-it-works-v2 {
+        padding: 2.2rem 0.2rem;
+    }
+    .howit-header h2 {
+        font-size: 1.5rem;
+    }
+    .howit-underline-red {
+        width: 90px;
+    }
+    .howit-img img {
+        max-width: 98vw;
+    }
+}
+
+/* Sezione alert/problema in piani.html */
+.alert-section {
+    background: #fff5f5;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(255,0,0,0.07);
+    margin-bottom: 3.5rem;
+    padding: 2.5rem 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.alert-content {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+.alert-left {
+    flex: 1;
+    min-width: 220px;
+    max-width: 340px;
+}
+.alert-img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.alert-right {
+    flex: 2;
+}
+.alert-right h2 {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    font-weight: bold;
+}
+.alert-list {
+    margin-bottom: 1.2rem;
+    padding-left: 1.2rem;
+}
+.alert-list li {
+    font-size: 1.08rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+    list-style: disc;
+}
+.alert-highlight {
+    background: #ffeaea;
+    color: var(--primary-color);
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    margin-top: 1.2rem;
+    font-size: 1.08rem;
+}
+@media (max-width: 900px) {
+    .alert-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .alert-left, .alert-right {
+        max-width: 100%;
+    }
+}
+
+/* Toggle piani mensile/annuale */
+.pricing-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 2.2rem;
+}
+.toggle-btn {
+    background: #f5f5f5;
+    border: none;
+    padding: 0.7rem 1.7rem;
+    border-radius: 8px;
+    font-size: 1.08rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.toggle-btn.active, .toggle-btn:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+.save-badge {
+    background: #ffeaea;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 0.2rem 0.7rem;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+.price-annual {
+    margin-top: 0.5rem;
+}
+@media (max-width: 600px) {
+    .alert-section {
+        padding: 1.2rem 0.5rem;
+    }
+    .pricing-toggle {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Sezione Menù digitale (piani.html) */
+.digital-menu-section {
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 24px;
+    margin-bottom: 3.5rem;
+    margin-top: 2.5rem;
+}
+.digital-menu-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('menu-bg.jpg') center center/cover no-repeat;
+    filter: blur(4px) brightness(0.7);
+    z-index: 1;
+}
+.digital-menu-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    width: 100%;
+    max-width: 1100px;
+    padding: 3.5rem 2rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.digital-menu-features {
+    flex: 2;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+.digital-menu-features h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+.digital-menu-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.2rem 0;
+}
+.digital-menu-features li {
+    font-size: 1.18rem;
+    margin-bottom: 0.6rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+.feature-note {
+    font-size: 0.95rem;
+    opacity: 0.7;
+    margin-left: 0.2rem;
+}
+.feature-footnote {
+    font-size: 0.98rem;
+    opacity: 0.8;
+    margin-top: 0.7rem;
+    font-style: italic;
+}
+.digital-menu-pricing {
+    flex: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.pricing-box {
+    background: rgba(255,255,255,0.08);
+    border: 3px solid #fff;
+    border-radius: 2.2rem;
+    padding: 2.5rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 220px;
+    max-width: 270px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+}
+.price-main {
+    font-size: 2.7rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+    line-height: 1.1;
+}
+.price-desc {
+    font-size: 1.1rem;
+    color: #fff;
+    opacity: 0.85;
+    margin-bottom: 1.2rem;
+    display: block;
+}
+.price-demo {
+    margin: 1.2rem 0 1.2rem 0;
+}
+@media (max-width: 900px) {
+    .digital-menu-content {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2.2rem 0.7rem;
+    }
+    .digital-menu-features {
+        margin-bottom: 2.2rem;
+    }
+    .digital-menu-pricing {
+        justify-content: center;
+        width: 100%;
+    }
+}
+@media (max-width: 600px) {
+    .digital-menu-section {
+        min-height: 420px;
+        border-radius: 12px;
+        margin-top: 1.2rem;
+    }
+    .pricing-box {
+        padding: 1.2rem 0.7rem;
+        min-width: 0;
+        max-width: 98vw;
+    }
+    .digital-menu-features h2 {
+        font-size: 1.3rem;
+    }
+    .digital-menu-features li {
+        font-size: 1rem;
+    }
+}
+
+/* Tabella prezzi a tre box (piani.html) */
+.digital-menu-content-pricing {
+    align-items: flex-start;
+}
+.digital-menu-pricing-table {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    z-index: 2;
+}
+.pricing-box {
+    background: rgba(255,255,255,0.10);
+    border: 3px solid #fff;
+    border-radius: 2.2rem;
+    padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 140px;
+    max-width: 180px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    color: #fff;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.pricing-box.demo {
+    border: 2.5px dashed #fff;
+    background: rgba(255,255,255,0.07);
+}
+.pricing-box.monthly {
+    border: 3px solid var(--primary-color);
+    background: rgba(255,59,48,0.10);
+}
+.pricing-box.yearly {
+    border: 3px solid #fff;
+    background: rgba(255,255,255,0.13);
+    position: relative;
+}
+.pricing-box .price-main {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0.2rem;
+    letter-spacing: 1px;
+}
+.pricing-box .price-desc {
+    font-size: 1.08rem;
+    color: #fff;
+    opacity: 0.85;
+    margin-bottom: 0.7rem;
+    display: block;
+}
+.pricing-box .save-badge {
+    background: #ffeaea;
+    color: var(--primary-color);
+    font-size: 1.02rem;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 0.2rem 0.7rem;
+    margin-top: 0.5rem;
+    vertical-align: middle;
+    display: inline-block;
+}
+.pricing-box:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.13);
+}
+@media (max-width: 900px) {
+    .digital-menu-pricing-table {
+        flex-direction: column;
+        gap: 1.2rem;
+        width: 100%;
+        align-items: center;
+    }
+    .pricing-box {
+        min-width: 0;
+        max-width: 98vw;
+        width: 100%;
     }
 } 
